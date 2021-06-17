@@ -1,0 +1,40 @@
+:root {
+    --blue: rgb(49, 114, 255);
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 72px;
+    color: var(--blue);
+}
+
+i {
+    color: white;
+}
+
+/* Classes */
+.ggameboard {
+    border: 4px solid black;
+    border-radius: 1rem;
+    background-color: var(--blue);
+}
+
+.block-container {
+    display: inline-grid;
+    width: 600px;
+    height: 600px;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1rem;
+    border: 1rem solid black;
+    border-radius: 1rem;
+    background-color: black;
+}
+
+.block-container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    background-color: var(--blue);
+}
