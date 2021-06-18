@@ -58,15 +58,17 @@ const gameController = (() => {
 
     const checkRound = () => {
         if (gameController.round == 8 && !checkWin()) {
-            return setTimeout(() => {draw();}, 100);
+            return setTimeout(() => {draw();}, 50);
         }
-        else if (checkWin()) {
-            return win();
+        else if (checkWin() == 'x') {
+            return setTimeout(() => {win('x');}, 50);
+        }
+        else if (checkWin() == 'o') {
+            return setTimeout(() => {win('o');}, 50);
         }
         else {
             gameController.round += 1;
         }
-
     }
 
     const checkWin = () => {
@@ -81,18 +83,32 @@ const gameController = (() => {
             [2, 4, 6],
         ];
 
-        const checkMarks = (indexes) => {
+        const checkMarksX = (indexes) => {
             return indexes.every(
                 (index) => {
                     console.log(`gameb index ${game.gameboard[index]}`);
-                    return game.gameboard[index] == 'x'
+                    return game.gameboard[index] == 'x';
                 }
             )
         };
 
-        if (checkMarks(winConditions[0])) {
-            console.log('won');
-            return true;
+        const checkMarksO = (indexes) => {
+            return indexes.every(
+                (index) => {
+                    console.log(`gameb index ${game.gameboard[index]}`);
+                    return game.gameboard[index] == 'o';
+                }
+            )
+        };
+
+        if (winConditions.some(checkMarksX)) {
+            console.log('Player 1 won');
+            return 'x';
+        }
+        else if (winConditions.some(checkMarksO)) {
+            console.log('Player 2 won');
+            return 'o';
+
         }
         else {
             return false;
@@ -105,8 +121,13 @@ const gameController = (() => {
         return game.reset();
     }
 
-    const win = () => {
-        alert(`Player x has won!`);
+    const win = (marker) => {
+        if (marker == 'x') {
+            alert(`Player 1 has won!`);
+        }
+        else {
+            alert(`Player 2 has won!`);
+        }
         return game.reset();
     }
 
