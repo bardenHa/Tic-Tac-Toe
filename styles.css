@@ -1,5 +1,10 @@
 :root {
     --blue: rgb(49, 114, 255);
+
+}
+
+header {
+    margin-bottom: 0rem;
 }
 
 h1 {
@@ -13,10 +18,8 @@ i {
 }
 
 /* Classes */
-.ggameboard {
-    border: 4px solid black;
-    border-radius: 1rem;
-    background-color: var(--blue);
+.top-margin {
+    margin-top: 5rem;
 }
 
 .block-container {
@@ -45,4 +48,9 @@ i {
 
 .block:active {
     background-color: rgb(42, 89, 190);
+}
+
+.button {
+    border-radius: 0.5rem;
+    font-weight: 500;
 }

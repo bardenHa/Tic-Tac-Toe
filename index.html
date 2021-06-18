@@ -25,23 +25,28 @@
         <h1 class="center-align">Tic-Tac-Toe</h1>
     </header>
     <!--Main-board-->
-    <div class="container">
+    <div class="container top-margin">
         <div class="row center-align">
             <div class="col s12">
                 <div class="block-container">
-                    <div class="block"><i class="fas fa-times fa-10x"></i></div>
-                    <div class="block"><i class="fas fa-times fa-10x"></i></div>
-                    <div class="block"><i class="fas fa-times fa-10x"></i></div>
-                    <div class="block"><i class="fas fa-times fa-10x"></i></div>
-                    <div class="block"><i class="fas fa-times fa-10x"></i></div>
-                    <div class="block"><i class="fas fa-times fa-10x"></i></div>
-                    <div class="block"><i class="fas fa-times fa-10x"></i></div>
-                    <div class="block"><i class="fas fa-times fa-10x"></i></div>
-                    <div class="block"><i class="fas fa-times fa-10x"></i></div>
+                    <div class="block" onclick="game.addMarker(0)"><i class="fas" id="block0"></i></div>
+                    <div class="block" onclick="game.addMarker(1)"><i class="fas" id="block1"></i></div>
+                    <div class="block" onclick="game.addMarker(2)"><i class="fas" id="block2"></i></div>
+                    <div class="block" onclick="game.addMarker(3)"><i class="fas" id="block3"></i></div>
+                    <div class="block" onclick="game.addMarker(4)"><i class="fas" id="block4"></i></div>
+                    <div class="block" onclick="game.addMarker(5)"><i class="fas" id="block5"></i></div>
+                    <div class="block" onclick="game.addMarker(6)"><i class="fas" id="block6"></i></div>
+                    <div class="block" onclick="game.addMarker(7)"><i class="fas" id="block7"></i></div>
+                    <div class="block" onclick="game.addMarker(8)"><i class="fas" id="block8"></i></div>
                 </div>
             </div>
         </div>
-    </div>  
+    </div>
+    <div class="container center-align top-margin">
+        <a class="waves-effect waves-light btn-large blue accent-3 button" onclick="game.reset()">
+            <i class="material-icons right">play_arrow</i>Play Again!
+        </a>
+    </div>
     <!--Import javascript-->
     <script src="app.js" defer></script>
 </body>
