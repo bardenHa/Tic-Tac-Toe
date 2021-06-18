@@ -1,5 +1,6 @@
 :root {
     --blue: rgb(49, 114, 255);
+
 }
 
 header {
@@ -51,4 +52,5 @@ i {
 
 .button {
     border-radius: 0.5rem;
+    font-weight: 500;
 }
