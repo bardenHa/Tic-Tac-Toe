@@ -31,10 +31,18 @@ i {
     background-color: black;
 }
 
-.block-container div {
+.block {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 0.5rem;
     background-color: var(--blue);
+}
+
+.block:hover {
+    background-color: rgb(89, 142, 255);
+}
+
+.block:active {
+    background-color: rgb(42, 89, 190);
 }
