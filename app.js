@@ -3,16 +3,16 @@ const game = (() => {
     let playerOneTurn = true;
 
     const reset = () => {
-        gameboard = ['','','','','','','','',''];
+        game.gameboard = ['','','','','','','','',''];
         gameController.round = 0;
         return render();
     }
 
     //renders marker on the DOM
     const render = () => {
-        for (i = 0; i < gameboard.length; i++) {
+        for (i = 0; i < game.gameboard.length; i++) {
             const block = document.getElementById(`block${i}`);
-            const marker = gameboard[i];
+            const marker = game.gameboard[i];
 
             if (marker == 'x') {
                 block.classList.add('fa-times', 'fa-10x');
@@ -27,14 +27,14 @@ const game = (() => {
     }
 
     const addMarker = (i) => {
-        if (playerOneTurn && gameboard[i] == '') {
-            gameboard[i] = 'x';
+        if (playerOneTurn && game.gameboard[i] == '') {
+            game.gameboard[i] = 'x';
             playerOneTurn = false;
             render();
             gameController.checkRound();
         }
-        else if (!playerOneTurn && gameboard[i] == '') {
-            gameboard[i] = 'o'
+        else if (!playerOneTurn && game.gameboard[i] == '') {
+            game.gameboard[i] = 'o'
             playerOneTurn = true;
             render();
             gameController.checkRound();
@@ -81,6 +81,22 @@ const gameController = (() => {
             [2, 4, 6],
         ];
 
+        const checkMarks = (indexes) => {
+            return indexes.every(
+                (index) => {
+                    console.log(`gameb index ${game.gameboard[index]}`);
+                    return game.gameboard[index] == 'x'
+                }
+            )
+        };
+
+        if (checkMarks(winConditions[0])) {
+            console.log('won');
+            return true;
+        }
+        else {
+            return false;
+        }
         
     }
 
@@ -96,6 +112,7 @@ const gameController = (() => {
 
     return {
         round,
-        checkRound
+        checkRound,
+        checkWin
     };
 })();
