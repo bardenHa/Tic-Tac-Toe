@@ -64,12 +64,6 @@ i {
     font-size: 1.5rem;
 }
 
-.fa-trophy {
-    color: var(--blue);
-    filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.3));
-    margin-top: 1rem;
-}
-
 /* IDs */
 #toast-container {
     min-width: 10%;
@@ -80,4 +74,10 @@ i {
 
 #modal {
     border-radius: 0.5rem;
+}
+
+#symbol {
+    color: var(--blue);
+    filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.3));
+    margin-top: 1rem;
 }
