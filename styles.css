@@ -13,6 +13,10 @@ h1 {
     color: var(--blue);
 }
 
+h4 {
+    font-weight: 500;
+}
+
 i {
     color: white;
 }
@@ -60,10 +64,20 @@ i {
     font-size: 1.5rem;
 }
 
+.fa-trophy {
+    color: var(--blue);
+    filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.3));
+    margin-top: 1rem;
+}
+
 /* IDs */
 #toast-container {
     min-width: 10%;
     top: 50%;
     right: 50%;
     transform: translateX(50%) translateY(50%);
-  }
+}
+
+#modal {
+    border-radius: 0.5rem;
+}

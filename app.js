@@ -1,3 +1,5 @@
+M.AutoInit();
+
 const game = (() => {
     let gameboard = ['','','','','','','','',''];
     let playerOneTurn = true;
@@ -41,7 +43,7 @@ const game = (() => {
         }
         else {
             //alert('Tile has already been selected!')
-            M.toast({html: 'Tile has already been selected!', classes : 'round'});
+            M.toast({html: 'Tile has already been selected!', classes : 'round', displayLength: 1000});
         }
 
         //return render();
