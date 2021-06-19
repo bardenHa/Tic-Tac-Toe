@@ -40,7 +40,8 @@ const game = (() => {
             gameController.checkRound();
         }
         else {
-            alert('Tile has already been selected!')
+            //alert('Tile has already been selected!')
+            M.toast({html: 'Tile has already been selected!', classes : 'round'});
         }
 
         //return render();
