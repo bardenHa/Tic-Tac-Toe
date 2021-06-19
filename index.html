@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     
     <title>Tic Tac Toe</title>
-    <link rel="icon" href="src\icon.svg">
+    <link rel="icon" href="img/icon.svg">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -44,8 +44,20 @@
     </div>
     <div class="container center-align top-margin">
         <a class="waves-effect waves-light btn-large blue accent-3 button" onclick="game.reset()">
-            <i class="material-icons right">play_arrow</i>Play Again!
+            <i class="material-icons right">play_arrow</i>Reset!
         </a>
+    </div>
+    <!-- Modal Structure -->
+    <div id="modal" class="modal">
+        <div class="modal-content center-align">
+        <h4 class="center" id="player-text">Player X has won!</h4>
+        <i class="fas fa-trophy fa-10x" id="symbol"></i>
+        </div>
+        <div class="modal-footer">
+            <div class="center row">
+                <a href="#!" class="modal-close waves-effect waves-light btn blue accent-3 button">Play Again?</a>
+            </div>
+        </div>
     </div>
     <!--Import javascript-->
     <script src="app.js" defer></script>

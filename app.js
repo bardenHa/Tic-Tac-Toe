@@ -1,3 +1,5 @@
+M.AutoInit();
+
 const game = (() => {
     let gameboard = ['','','','','','','','',''];
     let playerOneTurn = true;
@@ -40,7 +42,8 @@ const game = (() => {
             gameController.checkRound();
         }
         else {
-            alert('Tile has already been selected!')
+            //alert('Tile has already been selected!')
+            M.toast({html: 'Tile has already been selected!', classes : 'round', displayLength: 1000});
         }
 
         //return render();
@@ -117,23 +120,45 @@ const gameController = (() => {
     }
 
     const draw = () => {
-        alert(`It's a draw!`);
+        openModal('draw')
         return game.reset();
     }
 
     const win = (marker) => {
         if (marker == 'x') {
-            alert(`Player 1 has won!`);
+            openModal('1');
         }
         else {
-            alert(`Player 2 has won!`);
+            openModal('2');
         }
         return game.reset();
+    }
+
+    const openModal = (playerWon) => {
+        const modalElem = document.querySelector('.modal');
+        const instance = M.Modal.init(modalElem);
+        const winMessage = document.getElementById('player-text');
+        const winSymbol = document.getElementById('symbol');
+        
+        //Clears all symbol styles
+        winSymbol.classList.remove('far', 'fa-grimace', 'fa-10x', 'fas', 'fa-trophy');
+
+        if (playerWon == 'draw') {
+            winMessage.innerText = `It's a draw!`;
+            winSymbol.classList.add('far', 'fa-grimace', 'fa-10x');
+            instance.open();
+        }
+        else{
+            winMessage.innerText = `Player ${playerWon} has won!`;
+            winSymbol.classList.add('fas', 'fa-trophy', 'fa-10x');
+            instance.open();
+        }
     }
 
     return {
         round,
         checkRound,
-        checkWin
+        checkWin,
+        openModal
     };
 })();
